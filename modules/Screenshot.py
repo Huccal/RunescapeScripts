@@ -3,6 +3,9 @@ import numpy as np
 import cv2
 import os
 from PIL import ImageGrab
+import win32gui as wgui
+
+from modules import WindowMgr
 
 LH = 86
 LS = 234
@@ -11,8 +14,10 @@ UH = 111
 US = 255
 UV = 255
 PATH = 'tempscrnshot.png'
-RES_IMG = [1214, 803]
-RES_SCRN = [2256, 1504]
+W = WindowMgr.WindowMgr()
+W.find_window_wildcard('RuneLite')
+RES_IMG = wgui.GetWindowRect(W._handle)   #[1214, 803]
+RES_SCRN = pauto.size()
 
 # Return HSV format of screenshot of what is highlighted with given HSV
 def shoot():
@@ -23,7 +28,8 @@ def shoot():
 	os.remove(PATH)
 	'''
 	
-	image = pauto.screenshot(region=(0, 0, 1214, 803))
+	#image = pauto.screenshot(region=(0, 0, 1214, 803))
+	image = pauto.screenshot(region=(RES_IMG[0], RES_IMG[1], RES_IMG[2], RES_IMG[3]))
 	image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
 	frame = np.array(image)
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
