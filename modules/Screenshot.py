@@ -22,7 +22,7 @@ RES_SCRN = pauto.size()
 
 # Return HSV format of screenshot of what is highlighted with given HSV
 def shoot():
-	
+	'''
 	image = pauto.screenshot(PATH, region=(0, 0, 1214, 803))
 	frame = cv2.imread(PATH)
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
@@ -34,7 +34,7 @@ def shoot():
 	image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
 	frame = np.array(image)
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-	'''
+	
 	'''
 	img = ImageGrab.grab(bbox=(0, 0, 1214, 803)).convert('RGB')
 	img_np = np.array(img)
