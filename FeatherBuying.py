@@ -10,6 +10,7 @@ from modules import RandomTime
 from modules import Screenshot
 import login
 
+'''
 LH = 86
 LS = 234
 LV = 202
@@ -23,10 +24,29 @@ LV1 = 200
 UH1 = 255
 US1 = 255
 UV1 = 251
+'''
+
+LH = 167
+LS = 213
+LV = 190
+UH = 255
+US = 255
+UV = 255
+
+LH1 = 167
+LS1 = 213
+LV1 = 255
+UH1 = 255
+US1 = 255
+UV1 = 255
 
 w = setup.Window()
 geometry = w.window_stats()
 screen = pauto.size()
+'''
+SKILLS = pauto.locateCenterOnScreen('skills.png')
+INVENTORY = pauto.locateCenterOnScreen('inventory.png')
+'''
 
 def setup_settings():
 	Mouse.moveClick(random.randint(1000, 1039), random.randint(745, 785), 1)
@@ -82,14 +102,44 @@ def click_featherpack():
 	# MOMMY'S LAPTOP
 	Mouse.moveClick(random.randint(656, 677), random.randint(246, 266), 1)
 	time.sleep(random.randint(350, 650)/1000)
+	
 
 # Where x1, y1, x2, y2, are the client window size coordinates
 # Where v, z, are the screen size
 def wait_featherpack(x1, y1, x2, y2, v, z):
-	Mouse.moveTo(random.randint(x2 + 50, v - 150), random.randint(y2 + 50, z - 150))
-	time.sleep(random.randint(7500, 10000)/1000)
-	Mouse.moveTo(random.randint(x1 + 19, x2 - 150), random.randint(y1 + 19, y2 - 150))
-	time.sleep(random.randint(2000, 3000)/1000)
+	chance = random.randint(1, 100)
+	if chance < 80:
+		# Move mouse out of screen
+		Mouse.moveTo(random.randint(x2 + 50, v - 150), random.randint(y2 + 50, z - 150))
+		time.sleep(random.randint(7500, 10000)/1000)
+		Mouse.moveTo(random.randint(x1 + 19, x2 - 150), random.randint(y1 + 19, y2 - 150))
+		time.sleep(random.randint(2000, 3000)/1000)
+	elif chance >= 80 and chance < 90:
+		# SURFACE LAPTOP
+		'''
+		# Clicks on skills and hover around the area
+		Mouse.moveClick(random.randint(853, 890), random.randint(297, 343), 1)
+		time.sleep(random.randint(5000, 7500)/1000)
+		Mouse.moveClick(random.randint(949, 990), random.randint(295, 341), 1)
+		time.sleep(random.randint(600, 900)/1000)
+		Mouse.moveTo(random.randint(x1 + 19, x2 - 150), random.randint(y1 + 19, y2 - 150))
+		time.sleep(random.randint(4000, 6000)/1000)
+		'''
+		# MOMMY'S LAPTOP
+		Mouse.moveClick(random.randint(568, 592), random.randint(198, 225), 1)
+		time.sleep(random.randint(5000, 7500)/1000)
+		Mouse.moveClick(random.randint(633, 659), random.randint(197, 225), 1)
+		time.sleep(random.randint(600, 900)/1000)
+		Mouse.moveTo(random.randint(x1 + 19, x2 - 150), random.randint(y1 + 19, y2 - 150))
+		time.sleep(random.randint(4000, 6000)/1000)
+
+	elif chance >= 90:
+		move_camera()
+		Mouse.moveTo(random.randint(x1 + 19, x2 - 150), random.randint(y1 + 19, y2 - 150))
+		time.sleep(random.randint(4000, 6000)/1000)
+		move_camera()
+		time.sleep(random.randint(4000, 6000)/1000)
+
 
 # Checks if find_gerrant right click is valid
 def click_check():#lh, ls, lv, uh, us, uv):
@@ -119,6 +169,7 @@ def click_valid():
 	time.sleep(RandomTime.randTime(0, 2, 2, 0, 3, 3))
 	Mouse.click('left')
 	time.sleep(random.randint(4000, 6000)/1000)
+	
 
 # Buys featherpack and closes store window
 def buy_featherpack():
@@ -134,6 +185,7 @@ def buy_featherpack():
 	Mouse.relMove(0, random.randint(69, 75))
 	Mouse.click('left')
 	Mouse.moveClick(random.randint(482, 497), random.randint(62, 76), 1)
+	
 
 def move_camera():
 	dir = random.randint(0, 1)
@@ -167,7 +219,7 @@ try:
 	time.sleep(2)
 	
 
-	reps = 30
+	reps = 60
 	for i in range(reps):
 		print('Finding Gerrant.')
 		while True:

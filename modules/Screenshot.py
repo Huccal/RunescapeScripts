@@ -6,6 +6,7 @@ from PIL import ImageGrab
 import win32gui as wgui
 
 from modules import WindowMgr
+#import WindowMgr
 
 LH = 86
 LS = 234
@@ -21,19 +22,19 @@ RES_SCRN = pauto.size()
 
 # Return HSV format of screenshot of what is highlighted with given HSV
 def shoot():
-	'''
+	
 	image = pauto.screenshot(PATH, region=(0, 0, 1214, 803))
 	frame = cv2.imread(PATH)
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-	os.remove(PATH)
-	'''
+	#os.remove(PATH)
 	
+	'''
 	#image = pauto.screenshot(region=(0, 0, 1214, 803))
 	image = pauto.screenshot(region=(RES_IMG[0], RES_IMG[1], RES_IMG[2], RES_IMG[3]))
 	image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
 	frame = np.array(image)
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-	
+	'''
 	'''
 	img = ImageGrab.grab(bbox=(0, 0, 1214, 803)).convert('RGB')
 	img_np = np.array(img)
@@ -57,7 +58,7 @@ def shot_coords(lh, ls, lv, uh, us, uv, hsv):
 		return [None]
 	'''
 	try:
-		if points.size < 500:
+		if points.size < 10:
 			return [None]
 	except AttributeError:
 		return [None]
