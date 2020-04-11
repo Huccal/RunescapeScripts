@@ -87,6 +87,7 @@ for i in range(int(reps)):
 	print('Doing repetition ' + str(i+1) + ' of '+ str(reps))
 
 	click_bank()
+	time.sleep(random.randint(250, 300)/1000)
 	click_deposit_inventory()
 	withdraw_items()
 	string_bows()
