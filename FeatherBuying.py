@@ -94,7 +94,7 @@ def found_gerrant(flag):
 
 def click_featherpack():
 	# SURFACE LAPTOP
-	'''
+	
 	Mouse.moveClick(random.randint(981, 1016), random.randint(365, 407), 1)
 	time.sleep(random.randint(350, 650)/1000)
 	'''
@@ -102,7 +102,7 @@ def click_featherpack():
 	# MOMMY'S LAPTOP
 	Mouse.moveClick(random.randint(656, 677), random.randint(246, 266), 1)
 	time.sleep(random.randint(350, 650)/1000)
-	
+	'''
 
 # Where x1, y1, x2, y2, are the client window size coordinates
 # Where v, z, are the screen size
@@ -116,7 +116,7 @@ def wait_featherpack(x1, y1, x2, y2, v, z):
 		time.sleep(random.randint(2000, 3000)/1000)
 	elif chance >= 80 and chance < 90:
 		# SURFACE LAPTOP
-		'''
+		
 		# Clicks on skills and hover around the area
 		Mouse.moveClick(random.randint(853, 890), random.randint(297, 343), 1)
 		time.sleep(random.randint(5000, 7500)/1000)
@@ -132,7 +132,7 @@ def wait_featherpack(x1, y1, x2, y2, v, z):
 		time.sleep(random.randint(600, 900)/1000)
 		Mouse.moveTo(random.randint(x1 + 19, x2 - 150), random.randint(y1 + 19, y2 - 150))
 		time.sleep(random.randint(4000, 6000)/1000)
-
+		'''
 	elif chance >= 90:
 		move_camera()
 		Mouse.moveTo(random.randint(x1 + 19, x2 - 150), random.randint(y1 + 19, y2 - 150))
@@ -155,7 +155,7 @@ def click_check():#lh, ls, lv, uh, us, uv):
 ## If click was valid, press trade
 def click_valid():
 	# SURFACE LAPTOP
-	'''
+	
 	time.sleep(RandomTime.randTime(0, 2, 2, 0, 3, 3))
 	Mouse.relMove(0, random.randint(62, 68))
 	time.sleep(RandomTime.randTime(0, 2, 2, 0, 3, 3))
@@ -169,12 +169,12 @@ def click_valid():
 	time.sleep(RandomTime.randTime(0, 2, 2, 0, 3, 3))
 	Mouse.click('left')
 	time.sleep(random.randint(4000, 6000)/1000)
-	
+	'''
 
 # Buys featherpack and closes store window
 def buy_featherpack():
 	# SURFACE LAPTOP
-	'''
+	
 	Mouse.moveClick(random.randint(129, 155), random.randint(212, 243), 2)
 	Mouse.relMove(0, random.randint(103, 109))
 	Mouse.click('left')
@@ -185,7 +185,7 @@ def buy_featherpack():
 	Mouse.relMove(0, random.randint(69, 75))
 	Mouse.click('left')
 	Mouse.moveClick(random.randint(482, 497), random.randint(62, 76), 1)
-	
+	'''
 
 def move_camera():
 	dir = random.randint(0, 1)

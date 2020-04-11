@@ -58,7 +58,7 @@ def shot_coords(lh, ls, lv, uh, us, uv, hsv):
 		return [None]
 	'''
 	try:
-		if points.size < 10:
+		if points.size < 50:
 			return [None]
 	except AttributeError:
 		return [None]
@@ -71,7 +71,7 @@ def shot_coords(lh, ls, lv, uh, us, uv, hsv):
 if __name__ == '__main__':
 	hsv = shoot()
 	#coords = shot_coords(LH, LS, LV, UH, US, UV, hsv)
-	coords = shot_coords(86, 255, 200, 255, 255, 251, hsv)
+	coords = shot_coords(167, 213, 255, 255, 255, 255, hsv)
 	#x = coords[0, 0]
 	#y = coords[0, 1]
 	print(coords, type(coords))

@@ -27,6 +27,9 @@ def relMove(px, py):
 def moveFast(x, y):
 	hc.move((x, y), random.randint(100, 250)/1000)
 
+def moveFastNormal(x, y):
+	pauto.moveTo(x, y, 1)
+
 def click(btn):
 	pauto.mouseDown(button=btn)
 	time.sleep(RandomTime.randTime(0, 0, 0, 0, 3, 9))
