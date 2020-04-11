@@ -24,7 +24,7 @@ def click_bank():
 	Mouse.moveClick(random.randint(279, 449), random.randint(262, 315), 1)
 	'''
 	# MOMMY'S LAPTOP
-	Mouse.moveClick(random.randint(207, 319), random.randint(159, 205), 1)
+	Mouse.moveClick(random.randint(201, 292), random.randint(40, 131), 1)
 
 def click_deposit_inventory():
 	'''
