@@ -65,7 +65,7 @@ def string_bows():
 	Mouse.click('left')
 	time.sleep(random.randint(240, 290)/1000)
 
-	hold = random.randint(800, 1000)/1000
+	hold = random.randint(1000, 1200)/1000
 	start = time.time()
 	while time.time() - start < hold:
 		Keyboard.press('space')
@@ -87,7 +87,7 @@ for i in range(int(reps)):
 	print('Doing repetition ' + str(i+1) + ' of '+ str(reps))
 
 	click_bank()
-	time.sleep(random.randint(250, 300)/1000)
+	time.sleep(random.randint(350, 500)/1000)
 	click_deposit_inventory()
 	withdraw_items()
 	string_bows()
