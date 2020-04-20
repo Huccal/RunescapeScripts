@@ -134,7 +134,7 @@ elif(option == '2'):
 		click_bank()
 		time.sleep(random.randint(350, 500)/1000)
 		click_deposit_bows()
-		withdraw_logs():
+		withdraw_logs()
 		fletch_bows()
 		wait_fletching(geometry[0], geometry[1], geometry[2], geometry[3], screen[0], screen[1])
 
