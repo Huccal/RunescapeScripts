@@ -37,15 +37,15 @@ cv2.createTrackbar('UV', 'Tracking', 255, 255, nothing)
 
 
 while True:
-	frame = cv2.imread('testimg.png')
+	frame = cv2.imread('agility.png')
 
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
 	'''
-	l_h = 55
-	l_s = 205
-	l_v = 0
-	u_h = 100
+	l_h = 165
+	l_s = 199
+	l_v = 192
+	u_h = 172
 	u_s = 255
 	u_v = 255
 	'''
@@ -72,7 +72,9 @@ while True:
 	cv2.imshow('res', res)	
 
 	# code that gives coordinates
-	#points = cv2.findNonZero(mask)
+	points = cv2.findNonZero(mask)
+
+	#print(points.size)
 
 	#avg = np.mean(points, axis=0)
 

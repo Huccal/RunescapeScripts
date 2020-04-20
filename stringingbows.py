@@ -11,6 +11,7 @@ from modules import Screenshot
 import login
 
 
+option = input('What to fletch? (1 - string, 2 - bows): ')
 reps = input('How many times do you want to repeat?: ')
 
 w = setup.Window()
@@ -34,6 +35,10 @@ def click_deposit_inventory():
 	# MOMMY's LAPTOP
 	Mouse.moveClick(random.randint(435, 461), random.randint(327, 353), 1)
 
+def click_deposit_bows():
+	# MOMMY's LAPTOP
+	Mouse.moveClick(random.randint(571, 589), random.randint(280, 299), 1)
+
 def withdraw_items():
 	'''
 	# SURFACE LAPTOP
@@ -47,6 +52,11 @@ def withdraw_items():
 	Mouse.moveClick(random.randint(81, 100), random.randint(180, 195), 1)
 	Mouse.moveFast(random.randint(130, 151), random.randint(179, 197))
 	Mouse.click('left')
+	Mouse.moveClick(random.randint(482, 498), random.randint(43, 57), 1)
+
+def withdraw_logs():
+	# MOMMY's LAPTOP
+	Mouse.moveClick(random.randint(176, 199), random.randint(177, 199), 1)
 	Mouse.moveClick(random.randint(482, 498), random.randint(43, 57), 1)
 
 def string_bows():
@@ -70,6 +80,18 @@ def string_bows():
 	while time.time() - start < hold:
 		Keyboard.press('space')
 
+def fletch_bows():
+	# MOMMY's LAPTOP
+	Mouse.moveClick(random.randint(575, 587), random.randint(244, 263), 1)
+	Mouse.moveFast(random.randint(571, 589), random.randint(280, 299))
+	Mouse.click('left')
+	time.sleep(random.randint(240, 290)/1000)
+
+	hold = random.randint(1000, 1200)/1000
+	start = time.time()
+	while time.time() - start < hold:
+		Keyboard.press('3')
+
 def wait_stringing(x1, y1, x2, y2, v, z):
 	chance = random.randint(1, 100)
 	if chance < 30:
@@ -82,15 +104,38 @@ def wait_stringing(x1, y1, x2, y2, v, z):
 		Mouse.moveTo(random.randint(x1 + 19, x2 - 150), random.randint(y1 + 19, y2 - 150))
 		time.sleep(random.randint(16500, 17100)/1000)
 
+def wait_fletching(x1, y1, x2, y2, v, z):
+	chance = random.randint(1, 100)
+	if chance < 30:
+		# Move mouse out of screen
+		Mouse.moveTo(random.randint(x2 + 50, v - 150), random.randint(y2 + 50, z - 150))
+		time.sleep(random.randint(25000, 25500)/1000)
+		Mouse.moveTo(random.randint(x1 + 19, x2 - 150), random.randint(y1 + 19, y2 - 150))
+		time.sleep(random.randint(25000, 25500)/1000)
+	elif chance >= 30:
+		Mouse.moveTo(random.randint(x1 + 19, x2 - 150), random.randint(y1 + 19, y2 - 150))
+		time.sleep(random.randint(50000, 51000)/1000)
 
-for i in range(int(reps)):
-	print('Doing repetition ' + str(i+1) + ' of '+ str(reps))
 
-	click_bank()
-	time.sleep(random.randint(350, 500)/1000)
-	click_deposit_inventory()
-	withdraw_items()
-	string_bows()
-	wait_stringing(geometry[0], geometry[1], geometry[2], geometry[3], screen[0], screen[1])
+if(option == '1'):
+	for i in range(int(reps)):
+		print('Doing repetition ' + str(i+1) + ' of '+ str(reps))
+
+		click_bank()
+		time.sleep(random.randint(350, 500)/1000)
+		click_deposit_inventory()
+		withdraw_items()
+		string_bows()
+		wait_stringing(geometry[0], geometry[1], geometry[2], geometry[3], screen[0], screen[1])
+elif(option == '2'):
+	for i in range(int(reps)):
+		print('Doing repetition ' + str(i+1) + ' of '+ str(reps))
+
+		click_bank()
+		time.sleep(random.randint(350, 500)/1000)
+		click_deposit_bows()
+		withdraw_logs():
+		fletch_bows()
+		wait_fletching(geometry[0], geometry[1], geometry[2], geometry[3], screen[0], screen[1])
 
 print('Finished all ' + str(reps) + ' repetition')
