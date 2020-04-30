@@ -30,6 +30,7 @@ uh1 = 185
 us1 = 255
 uv1 = 255
 
+
 w = setup.Window()
 
 def alert_mark_found():
